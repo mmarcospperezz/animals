@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Zoo {
@@ -68,5 +69,17 @@ public class Zoo {
                 ", cercadoHerb=" + cercadoHerb +
                 ", cercadoTodos=" + cercadoTodos +
                 '}';
+    }
+
+    public void showInfo() {
+        System.out.println(nombre);
+        System.out.println("Area de herbívoros " + cercadoHerb.getNumCercado());
+        System.out.println(Arrays.toString(cercadoHerb.getAnimales()));
+
+        System.out.println("Area de carnívoros " + cercadoCarn.getNumCercado());
+        System.out.println(Arrays.toString(cercadoCarn.getAnimales()));
+
+        System.out.println("Area de animales " + cercadoTodos.getNumCercado());
+        System.out.println(Arrays.toString(cercadoTodos.getAnimales()));
     }
 }

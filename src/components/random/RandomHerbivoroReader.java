@@ -1,11 +1,11 @@
-package components;
+package components.random;
 
-import model.Carnivoro;
+import components.Reader;
+import model.Herbivoro;
 
 import java.util.Random;
 
-public class RandomCarnivoroReader implements Reader<Carnivoro> {
-
+public class RandomHerbivoroReader implements Reader<Herbivoro> {
     private final static String[] ESPECIES = {
             "Gato", "Perro", "Lobo", "leon", "Pantera", "Elefante"
     };
@@ -14,23 +14,22 @@ public class RandomCarnivoroReader implements Reader<Carnivoro> {
             "Pinky", "Toby", "Alfredo", "Chasee", "Skie", "Ápolonia"
     };
 
-    private final static String[] TIPODECARNE = {
-            "Blanca", "De cerdo", "De vacuno", "De ave"
+    private final static String[] CONJPLANTAS = {
+            "Flores", "Hierba", "Pasto", "Verduras"
     };
     private final Random random;
 
-    public RandomCarnivoroReader(Random random) {
+    public RandomHerbivoroReader(Random random) {
         this.random = random;
     }
 
     @Override
-    public Carnivoro read() {
-        return new Carnivoro(
+    public Herbivoro read() {
+        return new Herbivoro(
                 ESPECIES[random.nextInt(ESPECIES.length)],
                 random.nextInt(20),
                 NOMBRES[random.nextInt(NOMBRES.length)],
-                TIPODECARNE[random.nextInt(TIPODECARNE.length)]
-            );
-
+                CONJPLANTAS[random.nextInt(CONJPLANTAS.length)]
+        );
     }
 }
